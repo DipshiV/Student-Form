@@ -94,9 +94,9 @@ export const StudentForm = () => {
                 <thead>
                   <tr>
                     <th>name</th>
-                    <th>roll number</th>
-                    <th>email</th>
+                  <th>email</th>
                     <th>password</th>
+                   <th>roll number</th>
                     <th>Delete</th>
                   </tr>
                 </thead>
