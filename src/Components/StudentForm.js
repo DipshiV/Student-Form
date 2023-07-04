@@ -2,8 +2,8 @@ import React,{useState, useEffect} from 'react'
 import { DisplayTable } from './DisplayTable';
 
 
-// getting the values of local storage
-const getDatafromLS=()=>{
+
+const getStudentData=()=>{
   const data = localStorage.getItem('details');
   if(data){
     return JSON.parse(data);
@@ -15,19 +15,19 @@ const getDatafromLS=()=>{
 
 export const StudentForm = () => {
 
-  // main array of objects state || books state || books array of objects
-  const [students, setStudents]=useState(getDatafromLS());
 
-  // input field states
+  const [students, setStudents]=useState(getStudentData());
+
+
   const [name, setName]=useState('');
   const [passowrd, setPassword]=useState('');
   const [rollnumber, setRollnumber]=useState('');
   const[email, setEmail]= useState('')
 
-  // form submit event
+ 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    // creating an object
+  
     let student={
         passowrd,
        name,
@@ -42,7 +42,7 @@ export const StudentForm = () => {
    
   }
 
-  // delete book from LS
+ 
   const deleteStudent=(rollnum)=>{
     const filteredstudents=students.filter((element,index)=>{
       return element.rollnumber !== rollnum
